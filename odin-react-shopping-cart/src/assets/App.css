@@ -1,0 +1,89 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 80px;
+  background-color: blanchedalmond;
+}
+
+.header h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 50px;
+}
+
+.nav {
+  display: flex;
+  gap: 50px;
+}
+
+.nav a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  text-decoration: none;
+  color: black;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-page {
+  display: grid;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  max-width: 840px;
+  background-color: rgb(255, 244, 227);
+}
+
+.card {
+  padding: 20px 16px 16px 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.card img {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
+  align-self: center;
+}
+
+.card .details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-size: 0.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.859);
+  margin-bottom: 6px;
+}
+
+.product-price {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  color: orangered;
+}
+
+.product-rating {
+  font-size: 20px;
+  color: gold;
+}
