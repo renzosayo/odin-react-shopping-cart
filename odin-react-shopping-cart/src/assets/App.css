@@ -77,13 +77,85 @@
   margin-bottom: 6px;
 }
 
+.product-page .product-details .price,
 .product-price {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
   color: orangered;
 }
 
+.product-page .product-details .rating,
 .product-rating {
   font-size: 20px;
   color: gold;
+}
+
+.product-page {
+  max-width: 1000px;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+.product-page img {
+  max-width: 400px;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.product-page .product-details {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-page .product-details h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+
+.product-page .product-details p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.quantity {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.quantity .add,
+.quantity .minus {
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity .add-to-cart {
+  height: 24px;
+  padding: 3px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+/* react modal */
+.ReactModal__Content--after-open {
+  max-height: 90vh;
+  justify-self: center;
+  align-self: center;
+}
+
+/* react overlay, react modal's parent */
+.ReactModal__Overlay--after-open {
+  display: flex;
 }

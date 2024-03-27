@@ -4,6 +4,7 @@ import Shop from "./Shop.jsx";
 import MainPage from "./MainPage.jsx";
 import Cart from "./Cart.jsx";
 import Home from "./Home.jsx";
+import ProductPage from "./ProductPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop />,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductPage />,
       },
       {
         path: "/cart",
