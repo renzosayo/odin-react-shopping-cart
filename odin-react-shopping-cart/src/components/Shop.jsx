@@ -11,19 +11,20 @@ export default function Shop() {
 
   useEffect(() => {
     const getProducts = async () => {
-      const res = await fetch("https://fakestoreapi.com/products?limit=50");
+      const res = await fetch("https://fakestoreapi.com/products?limit=20");
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       setProducts(data);
     };
     getProducts();
   }, []);
 
-  const handleClick = () => {
+  const handleClick = (product) => {
     setIsOpen(true);
+    setSelected(product);
   };
 
-  if (products.length < 1) return <div>Loading...</div>;
+  if (products.length < 1) return <div className="loading">Loading...</div>;
   else {
     return (
       <div className="shop-page">
@@ -33,14 +34,13 @@ export default function Shop() {
               key={product.id}
               product={product}
               handleClick={() => {
-                setSelected(product);
-                handleClick(product.id);
+                handleClick(product);
               }}
             />
           );
         })}
-        <ContextProvider.Provider value={selected}>
-          <ProductModal isOpen={isOpen} setIsOpen={setIsOpen} />
+        <ContextProvider.Provider value={{ selected, isOpen, setIsOpen }}>
+          <ProductModal />
         </ContextProvider.Provider>
       </div>
     );

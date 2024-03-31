@@ -5,6 +5,9 @@ import MainPage from "./MainPage.jsx";
 import Cart from "./Cart.jsx";
 import Home from "./Home.jsx";
 import ProductPage from "./ProductPage.jsx";
+import { useState, createContext } from "react";
+
+export const CartContext = createContext();
 
 const router = createBrowserRouter([
   {
@@ -33,9 +36,13 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const [cart, setCart] = useState([]);
+
   return (
     <>
-      <RouterProvider router={router} />
+      <CartContext.Provider value={{ cart, setCart }}>
+        <RouterProvider router={router} />
+      </CartContext.Provider>
     </>
   );
 }
