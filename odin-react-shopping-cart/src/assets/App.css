@@ -39,6 +39,12 @@ body {
   border-radius: 6px;
   background-color: black;
   font-family: Arial, Helvetica, sans-serif;
+  transition: color, background-color 0.7s;
+}
+
+.home a:hover {
+  color: black;
+  background-color: white;
 }
 
 .header {
