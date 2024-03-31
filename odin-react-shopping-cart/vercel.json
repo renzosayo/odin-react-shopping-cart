@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/odin-react-shopping-cart/(.*)",
+      "destination": "/odin-react-shopping-cart/index.html"
+    }
+  ]
+}
