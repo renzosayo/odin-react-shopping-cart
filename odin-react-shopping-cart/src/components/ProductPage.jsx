@@ -1,10 +1,10 @@
-import Quantity from "./AddToCart";
+import AddToCart from "./AddToCart";
 import { useContext, useState } from "react";
 import { ContextProvider } from "./Shop";
 
 export default function ProductPage() {
   const [countToBuy, setCountToBuy] = useState(1);
-  const { setIsOpen, selected } = useContext(ContextProvider);
+  const { setIsOpen, selected, setModalShown } = useContext(ContextProvider);
   const rating = Math.round(selected.rating.rate);
 
   return (
@@ -24,7 +24,11 @@ export default function ProductPage() {
         <p className="price">${selected.price.toFixed(2)}</p>
         <p className="rating">{"★".repeat(rating)}</p>
         <p className="rate-count">by {selected.rating.count} reviews</p>
-        <Quantity countToBuy={countToBuy} setCountToBuy={setCountToBuy} />
+        <AddToCart
+          countToBuy={countToBuy}
+          setCountToBuy={setCountToBuy}
+          setModalShown={setModalShown}
+        />
       </div>
     </div>
   );

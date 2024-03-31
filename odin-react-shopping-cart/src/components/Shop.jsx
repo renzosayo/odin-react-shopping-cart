@@ -5,6 +5,7 @@ import ProductModal from "./ProductModal";
 export const ContextProvider = createContext();
 
 export default function Shop() {
+  const [modalShown, setModalShown] = useState(false);
   const [products, setProducts] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState({});
@@ -39,9 +40,18 @@ export default function Shop() {
             />
           );
         })}
-        <ContextProvider.Provider value={{ selected, isOpen, setIsOpen }}>
+        <ContextProvider.Provider
+          value={{ selected, isOpen, setIsOpen, setModalShown }}
+        >
           <ProductModal />
         </ContextProvider.Provider>
+        <div
+          className={
+            modalShown ? "added-to-cart shown" : "added-to-cart hidden"
+          }
+        >
+          <p>Added to cart</p>
+        </div>
       </div>
     );
   }

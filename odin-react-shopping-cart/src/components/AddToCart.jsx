@@ -4,7 +4,11 @@ import { ContextProvider } from "./Shop";
 import { CartContext } from "./App";
 import Quantity from "./Quantity";
 
-export default function AddToCart({ countToBuy, setCountToBuy }) {
+export default function AddToCart({
+  countToBuy,
+  setCountToBuy,
+  setModalShown,
+}) {
   const { selected, setIsOpen } = useContext(ContextProvider);
   const { cart, setCart } = useContext(CartContext);
   const incrementCount = () => {
@@ -17,7 +21,11 @@ export default function AddToCart({ countToBuy, setCountToBuy }) {
 
   const addToCart = () => {
     setIsOpen(false);
-    // setCart([...cart, { product: selected, count: countToBuy }]);
+    /* show modal then settimeout for 1s to close */
+    setModalShown(true);
+    setTimeout(() => {
+      setModalShown(false);
+    }, 2000);
 
     let isInCart = false;
     const newCart = cart.map((item) => {
@@ -50,4 +58,5 @@ export default function AddToCart({ countToBuy, setCountToBuy }) {
 AddToCart.propTypes = {
   countToBuy: PropTypes.number,
   setCountToBuy: PropTypes.func,
+  setModalShown: PropTypes.func,
 };

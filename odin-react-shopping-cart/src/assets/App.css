@@ -268,7 +268,7 @@ body {
 
 .cart-item {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 3fr 1fr;
   max-width: 600px;
   max-height: 150px;
   border: 1px solid lightgray;
@@ -284,6 +284,7 @@ body {
   align-items: center;
   justify-content: center;
   min-width: 250px;
+  position: relative;
 }
 
 .cart-item .details h1 {
@@ -295,14 +296,19 @@ body {
   position: relative;
   grid-template-rows: 3fr 2fr;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
+  justify-content: start;
+  gap: 3px;
   font-size: 20px;
 }
 
 .cart-item .pricing .remove-item {
   position: absolute;
-  right: 10px;
+  right: 3px;
+  color: red;
+  background-color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .cart-item .pricing .quantity {
@@ -315,7 +321,8 @@ body {
 }
 
 .cart-item img {
-  height: 120px;
+  max-height: 120px;
+  max-width: 120px;
   grid-row: span 2;
   justify-self: center;
 }
@@ -335,6 +342,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.shown {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.added-to-cart {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background-color: rgb(0, 207, 0);
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.added-to-cart p {
+  outline: 1px black;
 }
 
 .checkout {
